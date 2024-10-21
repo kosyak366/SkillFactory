@@ -10,18 +10,18 @@ def user_input(f, user):
     while True:
         place = input(f"Ходит {user}. Введите координаты: ").split()
         if len(place) != 2:
-            print(10 * '*', 'Введите две координаты, через пробел', '*' * 10)
+            print('Введите две координаты через пробел')
             continue
 
         if not (place[0].isdigit() and place[1].isdigit()):
-            print(5 * '*', 'Вводите только числа', '*' * 5)
+            print('Вводите только числа')
             continue
         x, y = map(int, place)
         if not (0 <= x < 3 and 0 <= y < 3):
-            print(3 * '*', 'Вы выйшли из деапозона', '*' * 3)
+            print('Вы вышли из деапозона')
             continue
         if f[x][y] != '-':
-            print('*', 'Клетка занята', '*')
+            print('Клетка занята')
             continue
         break
     return x, y
